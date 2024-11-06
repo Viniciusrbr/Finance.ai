@@ -23,12 +23,15 @@ model Transaction {
   date          DateTime
   createdAt     DateTime                 @default(now())
   updatedAt     DateTime                 @updatedAt
+  userId        String
 }
+
 enum TransactionType {
   DEPOSIT
   EXPENSE
   INVESTMENT
 }
+
 enum TransactionCategory {
   HOUSING
   TRANSPORTATION
@@ -40,6 +43,7 @@ enum TransactionCategory {
   EDUCATION
   OTHER
 }
+
 enum TransactionPaymentMethod {
   CREDIT_CARD
   DEBIT_CARD
