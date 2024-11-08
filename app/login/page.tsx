@@ -1,9 +1,10 @@
-import Image from "next/image";
-import { Button } from "../_components/ui/button";
-import { LogInIcon } from "lucide-react";
 import { SignInButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
+import { LogInIcon } from "lucide-react";
+import Image from "next/image";
 import { redirect } from "next/navigation";
+
+import { Button } from "../_components/ui/button";
 
 export default async function LoginPage() {
   const { userId } = await auth();

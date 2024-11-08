@@ -1,14 +1,16 @@
 "use server";
 
-import { db } from "@/app/_lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import {
   TransactionCategory,
   TransactionPaymentMethod,
   TransactionType,
 } from "@prisma/client";
-import { addTransactionSchema } from "./schema";
 import { revalidatePath } from "next/cache";
+
+import { db } from "@/app/_lib/prisma";
+
+import { addTransactionSchema } from "./schema";
 
 interface AddTransactionParams {
   name: string;
