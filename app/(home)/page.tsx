@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import Navbar from "../_components/navbar";
 import { getDashboard } from "../_data/get-dashboard";
+import LastTransactions from "../_data/get-dashboard/last-transactions";
 import ExpensesPerCategory from "./_components/expenses-per-category";
 import SummaryCards from "./_components/summary-cards";
 import TimeSelect from "./_components/time-select";
@@ -35,7 +36,7 @@ export default async function Home({ searchParams: { month } }: HomeProps) {
           <h1 className="text-2xl font-bold">Dashboard</h1>
           <TimeSelect />
         </div>
-        <div className="grid grid-cols-[2fr,1fr]">
+        <div className="grid grid-cols-[2fr,1fr] gap-6">
           <div className="flex flex-col gap-6">
             <SummaryCards month={month} {...dashboard} />
             <div className="grid grid-cols-3 grid-rows-1 gap-6">
@@ -45,6 +46,7 @@ export default async function Home({ searchParams: { month } }: HomeProps) {
               />
             </div>
           </div>
+          <LastTransactions lastTransactions={dashboard.lastTransactions} />
         </div>
       </div>
     </>
