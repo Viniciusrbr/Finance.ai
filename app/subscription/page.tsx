@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import Navbar from "../_components/navbar";
 import { Badge } from "../_components/ui/badge";
 import { Card, CardContent, CardHeader } from "../_components/ui/card";
+import { getCurrentMonthTransactions } from "../_data/get-current-month-transactions";
 import AcquirePlanButton from "./_components/acquire-plan-button";
 
 export default async function SubscriptionPage() {
@@ -14,7 +15,9 @@ export default async function SubscriptionPage() {
     redirect("/login");
   }
   const user = await clerkClient().users.getUser(userId);
+  const currentMonthTransactions = await getCurrentMonthTransactions();
   const hasPremiumPlan = user.publicMetadata.subscriptionPlan == "premium";
+
   return (
     <>
       <Navbar />
@@ -37,7 +40,9 @@ export default async function SubscriptionPage() {
             <CardContent className="space-y-6 py-8">
               <div className="flex items-center gap-2">
                 <CheckIcon className="text-primary" />
-                <p>Apenas 10 transações por mês (7/10)</p>
+                <p>
+                  Apenas 10 transações por mês ({currentMonthTransactions}/10)
+                </p>
               </div>
               <div className="flex items-center gap-2">
                 <XIcon />
