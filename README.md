@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">💰 Finance.ai 🤖</h1>
 
-## Getting Started
+![preview](preview.png)
 
-First, run the development server:
+<p align="justify">Finance.ai é um SaaS de gestão financeira onde o usuário pode fazer o controle dos seus gastos e gerar relatórios com inteligência artificial através da integração com o chatGPT.</p>
 
+> Status do Projeto: Concluido ✅
+
+> Deploy disponível: Sim ✅
+
+## 🏆 Principais funcionalidades
+- Adicione suas transações e tenha o controle de gasto de todos os meses.
+   - É possível adicionar transações do tipo despesa, depósito ou investimento. Adicione a elas uma categoria e a data em que foram feitas.
+   - Acompanhe o resumo das despesas do mês no dashboard da tela inicial.
+- Relatórios com inteligência artificial.
+  - Uso da API da OpenAI para gerar gerar relatório das despesas do usuário com insights sobre suas finanças.
+- Plano Premium.
+  - Através do Sripe, o usuário pode pagar pelo plano premium e ter acesso a adicionar transações ilimitadas e relatórios com IA.(cartão fake para testar: 4242 4242 4242 4242)
+
+
+## 📚 Linguagens e libs utilizadas
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/) 
+- [TypeScript](https://www.typescriptlang.org/)
+- [Clerk](https://clerk.com/)
+- [Stripe](https://stripe.com/br)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [React Hook Form](https://www.react-hook-form.com/)
+
+
+
+## 🌐 Deploy da Aplicação com Vercel 
+
+> https://finance-ai-vinirbr.vercel.app/login
+
+## ▶️ Como rodar a aplicação 
+
+No terminal, clone o projeto:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Viniciusrbr/Finance.ai.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Entre na pasta do projeto:
+```bash
+cd Finance.ai
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Instale as dependências:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Execute a aplicação:
+```bash
+npm run dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pronto, agora é possível acessar a aplicação a partir da rota http://localhost:3000/
